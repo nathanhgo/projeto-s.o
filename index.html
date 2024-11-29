@@ -10,18 +10,25 @@
     <div class="pedidos">
         <div class="pedido">
             <h3>Pedido</h3>
-            <p>Cozinheiros:<br> <span>1</span></p>
-            <p>Dificuldade:<br> <span>2</span></p>
-            <select name="" id="">
-                <option value="a">1 e 2</option>
-                <option value="b">1 e 3</option>
-                <option value="c">2 e 3</option>
-            </select>
-            <button>Atribuir</button>
+            <div class="pedido-status">
+                <div>Cozinheiros<br> <span>1</span></div>
+                <div>Dificuldade<br> <span>2</span></div>
+            </div>
+            <div class="pedido-interativo">
+                <select name="" id="">
+                    <option value="a">1 e 2</option>
+                    <option value="b">1 e 3</option>
+                    <option value="c">2 e 3</option>
+                </select>
+                <button>Atribuir</button>
+            </div>
         </div>
     </div>
     <div class="cozinha">
         <div class="cozinheiro">
+            <div class="cozinheiro-token">
+                <img src="./assets/Cozinheiro 1/cozinheiro1_anim.gif" alt="">
+            </div>
             <div class="status">
                 <p>Não ocupado</p>
                 <p>Velocidade: </p>
@@ -29,8 +36,29 @@
                 <p>Taxa de milagre: <span>10%</span></p>
             </div>
         </div>
-        <div class="cozinheiro"></div>
-        <div class="cozinheiro"></div>
+        <div class="cozinheiro">
+            <div class="cozinheiro-token">
+                <img src="./assets/Cozinheiro 2/cozinheiro2_anim.gif" alt="">
+            </div>
+            <div class="status">
+                <p>Não ocupado</p>
+                <p>Velocidade: </p>
+                <p>Taxa de erro: <span>10%</span></p>
+                <p>Taxa de milagre: <span>10%</span></p>
+            </div>
+        </div>
+        <div class="cozinheiro">
+            
+            <div class="cozinheiro-token">
+                <img src="./assets/Cozinheiro 3/cozinheiro3_anim.gif" alt="">
+            </div>
+            <div class="status">
+                <p>Não ocupado</p>
+                <p>Velocidade: </p>
+                <p>Taxa de erro: <span>10%</span></p>
+                <p>Taxa de milagre: <span>10%</span></p>
+            </div>
+        </div>
     </div>
     <div class="controle"></div>
 
