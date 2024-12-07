@@ -4,7 +4,7 @@
     box-sizing: border-box;
     text-align: center;
 
-    font-family: "Pixelify Sans", sans-serif;
+    /* font-family: "Pixelify Sans", sans-serif; */
 }
 
 body {
@@ -90,26 +90,6 @@ h1 {
     border: 3px solid rgb(13, 97, 90);
 }
 
-.pedido-interativo button {
-    font-weight: 500;
-    padding: 3px;
-    background-color: rgb(13, 97, 90);
-    border: 1px solid black;
-    color: white;
-
-    transition: 200ms;
-}
-
-.pedido .pedido-interativo button:hover {
-    background-color: rgb(6, 44, 41);
-    border-radius: 1rem;
-    padding: 3px 10px;
-}
-
-.pedido .pedido-interativo button:active {
-    background-color: rgb(3, 19, 17);
-}
-
 .pedido h3 {
     margin-right: 38px;
     margin-top: 5px;
@@ -144,6 +124,19 @@ h1 {
     color: white;
 }
 
+.cozinheiro .load_bar {
+    width: 10vw;
+    height: 100%;
+    background-color: rgb(216, 213, 213);
+    border: 2px solid rgb(13, 97, 90);
+}
+
+.load_bar .progress {
+    height: 100%;
+    width: 0%;
+    background-color: green;
+}
+
 .status p {
     font-weight: 400;
     font-size: 1.2rem;
@@ -156,7 +149,7 @@ h1 {
 }
 
 .cozinheiro .cozinheiro-token{
-    width: 90%;
+    width: 80%;
 }
 
 .cozinheiro .cozinheiro-token img{
@@ -168,4 +161,50 @@ h1 {
 
     width: 100vw;
     min-height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    border-top: 5px solid rgb(13, 97, 90);
+    color: white;
+}
+
+.controle .upgrade {
+    width: 15vw;
+    height: 120px;
+    background-color: rgb(243, 182, 132);
+    border: 2px solid rgb(131, 86, 50);
+    color: black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 0.2rem;
+}
+
+.controle button {
+    padding: 6px;
+}
+
+button {
+    font-weight: 500;
+    padding: 3px;
+    background-color: rgb(13, 97, 90);
+    border: 1px solid black;
+    color: white;
+
+    transition: 200ms;
+}
+
+button:hover {
+    background-color: rgb(6, 44, 41);
+    border-radius: 1rem;
+    padding: 3px 10px;
+}
+
+button:active {
+    background-color: rgb(3, 19, 17);
 }

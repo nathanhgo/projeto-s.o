@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,92 +12,38 @@
 <body>
     <h1>OVERCOOKED 3</h1>
     <div class="pedidos">
-        <div class="pedido">
-            <h3>Pedido 1</h3>
-            <div class="pedido-status">
-                <div>Cozinheiros: <span>1</span></div>
-                <div>Dificuldade: <span>2</span></div>
-            </div>
-
-            <div class="pedido-interativo">
-                <select name="" id="">
-                    <option value="a">1 e 2</option>
-                    <option value="b">1 e 3</option>
-                    <option value="c">2 e 3</option>
-                </select>
-                <button>Atribuir</button>
-            </div>
-        </div>
-        <div class="pedido">
-            <h3>Pedido 2</h3>
-            <div class="pedido-status">
-                <div>Cozinheiros: <span>1</span></div>
-                <div>Dificuldade: <span>2</span></div>
-            </div>
-
-            <div class="pedido-interativo">
-                <select name="" id="">
-                    <option value="a">1 e 2</option>
-                    <option value="b">1 e 3</option>
-                    <option value="c">2 e 3</option>
-                </select>
-                <button>Atribuir</button>
-            </div>
-        </div>
-        <div class="pedido">
-            <h3>Pedido 3</h3>
-            <div class="pedido-status">
-                <div>Cozinheiros: <span>1</span></div>
-                <div>Dificuldade: <span>2</span></div>
-            </div>
-
-            <div class="pedido-interativo">
-                <select name="" id="">
-                    <option value="a">1 e 2</option>
-                    <option value="b">1 e 3</option>
-                    <option value="c">2 e 3</option>
-                </select>
-                <button>Atribuir</button>
-            </div>
-        </div>
     </div>
     <div class="cozinha">
-        <div class="cozinheiro">
-            <div class="cozinheiro-token">
-                <img src="./assets/Cozinheiro 1/cozinheiro1_anim.gif" alt="">
-            </div>
-            <div class="status">
-                <p>Não ocupado</p>
-                <p>Velocidade: <span>1</span></p>
-                <p>Taxa de erro: <span>10%</span></p>
-                <p>Taxa de milagre: <span>10%</span></p>
-            </div>
-        </div>
-        <div class="cozinheiro">
-            <div class="cozinheiro-token">
-                <img src="./assets/Cozinheiro 2/cozinheiro2_anim.gif" alt="">
-            </div>
-            <div class="status">
-                <p>Não ocupado</p>
-                <p>Velocidade: <span>1</span></p>
-                <p>Taxa de erro: <span>10%</span></p>
-                <p>Taxa de milagre: <span>10%</span></p>
-            </div>
-        </div>
-        <div class="cozinheiro">
-            
-            <div class="cozinheiro-token">
-                <img src="./assets/Cozinheiro 3/cozinheiro3_anim.gif" alt="">
-            </div>
-            <div class="status">
-                <p>Não ocupado</p>
-                <p>Velocidade: <span>1</span></p>
-                <p>Taxa de erro: <span>10%</span></p>
-                <p>Taxa de milagre: <span>10%</span></p>
-            </div>
-        </div>
+        <div class="cozinheiro" id="cozinheiro1"></div>
+        <div class="cozinheiro" id="cozinheiro2"></div>
+        <div class="cozinheiro" id="cozinheiro3"></div>
     </div>
-    <div class="controle"></div>
+    <div class="controle">
+        <div>
+            <h3>Loja de Upgrades</h3>
+            <h3>Dinheiro: R$<span id="dinheiro">0</span>.00</h3>
+        </div>
+
+        <div class="upgrade">
+            <h4>Cozinheiro 1</h4>
+            <label>Velocidade atual: <span id="upgrade1">0</span></label>
+            <label>Preço: R$<span id="upgrade1_price">5</span>.00</label>
+            <button>Melhorar!</button>
+        </div>
+        <div class="upgrade">
+            <h4>Cozinheiro 2</h4>
+            <label>Velocidade atual: <span id="upgrade2">0</span></label>
+            <label>Preço: R$<span id="upgrade2_price">5</span>.00</label>
+            <button>Melhorar!</button>
+        </div>
+        <div class="upgrade">
+            <h4>Cozinheiro 3</h4>
+            <label>Velocidade atual: <span id="upgrade3">0</span></label>
+            <label>Preço: R$<span id="upgrade3_price">5</span>.00</label>
+            <button>Melhorar!</button>
+        </div>
+
+    </div>
 
     <script src="script.js"></script>
 </body>
