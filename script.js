@@ -134,7 +134,7 @@ class Game {
 
     createRequest() {
         let difficult = parseInt(Math.random() * 3) + 1
-        let quantity = parseInt(Math.random() * 3) + 1
+        let quantity = parseInt(Math.random() * 2) + 1
         let new_recipe = new Recipe(this.last_id, difficult, quantity)
         this.requestsArray.push(new_recipe)
         this.showRequest(new_recipe)
@@ -145,6 +145,16 @@ class Game {
         let cooks = recipeObj.quantity;
         let difficult = recipeObj.difficult;
         let recipeIndex = recipeObj.id // Índice da receita
+
+        let opc_a = "1"
+        let opc_b = "2"
+        let opc_c = "3"
+        
+        if (cooks == 2) {
+            opc_a = "1 e 2"
+            opc_b = "1 e 3"
+            opc_c = "2 e 3"
+        }
 
         // Criar um contêiner para o pedido
         let recipe_div = document.createElement('div');
@@ -157,9 +167,9 @@ class Game {
             </div>
             <div class="pedido-interativo">
                 <select>
-                    <option value="a">1</option>
-                    <option value="b">2</option>
-                    <option value="c">3</option>
+                    <option value="a">${opc_a}</option>
+                    <option value="b">${opc_b}</option>
+                    <option value="c">${opc_c}</option>
                 </select>
                 <button>Atribuir</button>
             </div>
@@ -185,17 +195,37 @@ class Game {
     attachRecipe(select_value, recipeObj) {
         let sucess = false
 
-        if (select_value == 'a' && cook1.status == false) {
-            sucess = true
-            cook1.work(recipeObj)
+        if (recipeObj.quantity == 1) {
 
-        } else if (select_value == 'b' && cook2.status == false) {
-            sucess = true
-            cook2.work(recipeObj)
+            if (select_value == 'a' && cook1.status == false) {
+                sucess = true
+                cook1.work(recipeObj)
 
-        } else if (select_value == 'c' && cook3.status == false) {
-            sucess = true
-            cook3.work(recipeObj)
+            } else if (select_value == 'b' && cook2.status == false) {
+                sucess = true
+                cook2.work(recipeObj)
+
+            } else if (select_value == 'c' && cook3.status == false) {
+                sucess = true
+                cook3.work(recipeObj)
+            }
+
+        } else {
+            if (select_value == 'a' && cook1.status == false && cook2.status == false) {
+                sucess = true
+                cook1.work(recipeObj)
+                cook2.work(recipeObj)
+
+            } else if (select_value == 'b' && cook1.status == false && cook3.status == false) {
+                sucess = true
+                cook1.work(recipeObj)
+                cook3.work(recipeObj)
+
+            } else if (select_value == 'c' && cook2.status == false && cook3.status == false) {
+                sucess = true
+                cook2.work(recipeObj)
+                cook3.work(recipeObj)
+            }
         }
 
         if (sucess == true) {
@@ -221,11 +251,14 @@ class Game {
         let upgrade2_price = document.querySelector('#upgrade2_price')
         let upgrade3_price = document.querySelector('#upgrade3_price')
 
+        let speed_upgrade = 1
+        let price_upgrade = 1
+
             if (index == 0 && this.money >= cook1.price_upgrade) {
                 this.money -= cook1.price_upgrade
 
-                cook1.speed += 5
-                cook1.price_upgrade += 1
+                cook1.speed += speed_upgrade
+                cook1.price_upgrade += price_upgrade
 
                 upgrade1.innerHTML = cook1.speed
                 upgrade1_price.innerHTML = cook1.price_upgrade
@@ -235,8 +268,8 @@ class Game {
             } else if (index == 1 && this.money >= cook2.price_upgrade) {
                 this.money -= cook2.price_upgrade
 
-                cook2.speed += 5
-                cook2.price_upgrade += 1
+                cook2.speed += speed_upgrade
+                cook2.price_upgrade += price_upgrade
 
                 upgrade2.innerHTML = cook2.speed
                 upgrade2_price.innerHTML = cook2.price_upgrade
@@ -246,8 +279,8 @@ class Game {
             } else if (index == 2 && this.money >= cook3.price_upgrade) {
                 this.money -= cook3.price_upgrade
 
-                cook3.speed += 5
-                cook3.price_upgrade += 1
+                cook3.speed += speed_upgrade
+                cook3.price_upgrade += price_upgrade
 
                 upgrade3.innerHTML = cook3.speed
                 upgrade3_price.innerHTML = cook3.price_upgrade
