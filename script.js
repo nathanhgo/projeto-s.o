@@ -1,11 +1,8 @@
-// 3 cozinheiros
-//     velocidade
-//     chance de erro
-//     chance de milagre
+const music = document.getElementById('background-music');
 
-// pratos
-//     tempo
-//     quantidade de cozinheiros
+window.addEventListener('click', () => {
+    music.play()
+})
 
 
 let recipes_div = document.querySelector('.pedidos')
